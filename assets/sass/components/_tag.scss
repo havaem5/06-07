@@ -1,0 +1,33 @@
+.tag {
+	padding-block: 64px;
+	&_title {
+		text-align: center;
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 40px;
+		color: $blue-dark;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		margin-bottom: 24px;
+		span {
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 40px;
+			letter-spacing: 0.1em;
+			color: $orange;
+		}
+	}
+	&_items {
+		display: flex;
+		justify-content: center;
+		gap: 80px;
+	}
+	@media (max-width: 1199.98px) {
+		&_items {
+			flex-wrap: wrap;
+		}
+		&_title {
+			font-size: 24px;
+		}
+	}
+}

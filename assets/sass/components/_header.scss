@@ -1,0 +1,135 @@
+.header {
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-block: 8px;
+	}
+	&_logo {
+		width: 200px;
+		height: 32px;
+		flex-shrink: 0;
+	}
+	&_right {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+	}
+	&_nav {
+		margin-right: 40px;
+		display: flex;
+		gap: 40px;
+		&-link {
+			&.active {
+				a {
+					color: $blue;
+					font-weight: 600;
+				}
+			}
+			a {
+				color: $blue-dark;
+				font-weight: 400;
+				font-size: 12px;
+			}
+		}
+	}
+	&_menu,
+	&_close {
+		padding: 8px;
+		display: none;
+		border-radius: 4px;
+		aspect-ratio: 1 / 1;
+	}
+	&_button {
+		display: flex;
+		gap: 12px;
+		color: $blue-dark;
+		&-item {
+			font-size: 12px;
+			background: unset;
+			color: $blue-dark;
+			font-family: inherit;
+			&:last-child {
+				padding: 2px 14px;
+				border-radius: 16px;
+				background: $blue;
+				color: #fff;
+				font-weight: 600;
+			}
+		}
+	}
+	&_switch {
+		position: relative;
+		input {
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+			cursor: pointer;
+		}
+		input:checked ~ span:last-of-type {
+			font-weight: 600;
+			color: $blue-dark;
+		}
+		input:not(:checked) ~ span:first-of-type {
+			font-weight: 600;
+			color: $blue-dark;
+		}
+		border: 0.5px solid #dae5f2;
+		border-radius: 16px;
+		padding: 4px 11px;
+		margin-left: 16px;
+		white-space: nowrap;
+		span {
+			color: $blue-gray-2;
+		}
+	}
+	@media (max-width: 991.98px) {
+		.container {
+			padding-block: 16px;
+		}
+		&_menu,
+		&_close {
+			display: block;
+		}
+		&_right {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateX(100%);
+			position: fixed;
+			transition: 0.4s;
+			display: flex;
+			background: rgb(255, 255, 255);
+			inset-block: 0;
+			right: 0;
+			flex-direction: column;
+			max-width: 375px;
+			width: 100%;
+			z-index: 10;
+			padding: 8px 20px;
+			overflow: auto;
+			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		}
+		&_right.active {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(0%);
+		}
+		&_nav {
+			width: 100%;
+			flex-direction: column;
+			margin-right: 0;
+			gap: 16px;
+			margin-bottom: 20px;
+			&-link {
+				padding-block: 4px;
+			}
+		}
+		&_button {
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+		&_switch {
+			margin-left: 0;
+		}
+	}
+}

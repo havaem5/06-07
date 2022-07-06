@@ -1,0 +1,86 @@
+.hero {
+	position: relative;
+	background: url("../images/hero.png") center no-repeat;
+	height: 382px;
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: #02203a;
+		opacity: 0.8;
+	}
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 32px;
+		height: 100%;
+		& > * {
+			z-index: 1;
+		}
+	}
+
+	&_title {
+		color: white;
+		max-width: 463px;
+		text-align: center;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 40px;
+	}
+	&_form {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		width: 100%;
+		&-input {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			max-width: 640px;
+			width: 100%;
+			label {
+				color: white;
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 24px;
+			}
+			input {
+				padding: 11px 16px;
+				border: 1px solid #dae5f2;
+				border-radius: 4px;
+				background: white;
+				font-family: inherit;
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 24px;
+				&::placeholder {
+					color: $blue-gray-1;
+					font-family: inherit;
+				}
+			}
+		}
+		&-button {
+			padding: 12px 24px;
+			background: $blue;
+			color: white;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 24px;
+			border-radius: 4px;
+			margin-top: auto;
+			white-space: nowrap;
+		}
+	}
+	@media (max-width: 575.98px) {
+		&_form {
+			flex-direction: column;
+			&-button {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}

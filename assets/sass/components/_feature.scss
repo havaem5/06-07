@@ -1,0 +1,129 @@
+.feature {
+	.container {
+		padding-block: 56px;
+	}
+	&_title {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 40px;
+		color: $blue-dark;
+		letter-spacing: 0.1em;
+		margin-bottom: 24px;
+		span {
+			color: $orange;
+			font-weight: 700;
+		}
+	}
+	&_items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 32px 16px;
+	}
+	&_item {
+		border-radius: 8px;
+	}
+	&_item:not(:last-child) {
+		background: #fff;
+		padding: 16px;
+		box-shadow: 0px 0px 24px rgba(0, 25, 54, 0.1);
+		display: flex;
+		gap: 16px;
+		align-items: center;
+		.feature_item-text {
+			flex: 1;
+			p:first-of-type {
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 24px;
+				color: $blue-dark;
+				margin-bottom: 2px;
+			}
+			p:last-of-type {
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 24px;
+				color: $blue-gray-1;
+				margin-bottom: 6px;
+			}
+			div {
+				display: flex;
+				justify-content: space-between;
+				span {
+					background: #f7fbff;
+					display: inline-block;
+					padding: 6px 11px;
+					font-weight: 700;
+					font-size: 10px;
+					line-height: 12px;
+					&.red {
+						color: $red;
+					}
+					&.green {
+						color: #0fb800;
+					}
+					&.orange {
+						color: #ff9900;
+					}
+					&.purple {
+						color: #8a3fe9;
+					}
+				}
+				i {
+					color: #00428e;
+				}
+			}
+		}
+	}
+	&_item:last-child {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		padding: 16px;
+		background: #edf2f9;
+		border-radius: 8px;
+		p {
+			max-width: 236px;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 32px;
+			color: $blue-mid;
+			span {
+				font-weight: 700;
+			}
+			i {
+				display: block;
+			}
+		}
+	}
+	@media (max-width: 1199.98px) {
+		&_items {
+			grid-template-columns: 1fr 1fr;
+		}
+		&_title {
+			font-size: 24px;
+		}
+	}
+	@media (max-width: 767.98px) {
+		&_items {
+			grid-template-columns: 1fr;
+		}
+		&_item:not(:last-child) {
+			.feature_item-text {
+				p:first-of-type {
+					font-size: 14px;
+				}
+				p:last-of-type {
+					font-size: 12px;
+				}
+			}
+		}
+		&_item:last-child {
+			p {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+	}
+}

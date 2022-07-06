@@ -1,0 +1,30 @@
+.sponsor {
+	padding-bottom: 113px;
+	&_title {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 40px;
+		color: $blue-dark;
+		letter-spacing: 0.1em;
+		margin-block: 8px 40px;
+		span {
+			color: $blue;
+			font-weight: 700;
+		}
+	}
+	&_items {
+		display: flex;
+		justify-content: center;
+		gap: 32px;
+	}
+	@media (max-width: 1199.98px) {
+		&_items {
+			flex-wrap: wrap;
+		}
+		&_title {
+			font-size: 24px;
+		}
+	}
+}
